@@ -59,13 +59,18 @@ const dataJSON = `[
 
 const cards = JSON.parse(dataJSON)
 
-console.log(cards)
+// console.log(cards)
+
+// telling js which part of the html to look for
 
 const container = document.querySelector('.template-hook')
 
+// next we'll loop function to call for the data for each card
 
 cards.forEach(function(el){
     
+    // here we create a new element where we will innerHTML to populate with the data
+
     let list = document.createElement('div')
     list.innerHTML = `
         <main class="main">
@@ -107,6 +112,7 @@ cards.forEach(function(el){
         </div>
         </main>
     `
-    
+    // The last component is to append the above to each data set and loop back until all the json items have been published.
+
     container.append(list)
 })
