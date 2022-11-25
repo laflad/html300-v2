@@ -1,0 +1,119 @@
+// Import partials here:
+@import '_settings.variables.scss';
+
+// below is the general page formatting
+* {
+    font-family: sans-serif;
+}
+
+h1 {
+    color: $abyss;
+}
+
+.logo-main {
+    position: absolute;
+    max-width: 170px;
+    top: 29px;
+    right: 120px;
+}
+
+
+
+body {
+    background-color: $white;
+    margin: 0;
+    padding: 20px 120px;
+    .logo {
+        .hammer{
+            transition: transform 300ms ease;
+        }
+    }
+    .logo:hover .hammer{
+        transform: translate(-20px, -2px) rotate(-20deg);
+    }
+    .logo:active .hammer{
+        transform: rotate(90deg);
+    }
+}
+
+// Here I used w3's site to configure a top menu and modified it to fit my brand
+
+.topnav {
+    overflow: hidden;
+    background-color: $arcadia;
+    border-radius: 4px;
+    a {
+        float: left;
+        color: $white;
+        text-align: center;
+        padding: 20px 30px;
+        text-decoration: none;
+        font-size: 15px;
+        transition: 300ms ease;
+    }
+    a:hover {
+        background-color: $mist;
+        color: $black;
+    }
+    a.active {
+        background-color: $lagoon;
+        color: $white;
+        font-weight: bold;
+    }
+}
+
+// creating a container for where the colors will appear and transition speed and behavior
+.colorbox {
+    width: 300px;
+    height: 150px;
+    border-radius: 3px;
+    padding: 20px;
+    margin: 20px;
+    transition: 300ms ease;
+    line-height: 0.5;
+}
+
+// below are the call branded background colors and the font colors they should be accompanied by
+
+.colorlagoon {
+    background-color: $lagoon;
+    color: $white;
+}
+
+.colormist {
+    background-color: $mist;
+    color: $abyss;
+}
+
+.colorabyss {
+    background-color: $abyss;
+    color: $white;
+}
+
+.colorarcadia {
+    background-color: $arcadia;
+    color: $white;
+}
+
+.colorwhisper {
+    background-color: $whisper;
+    color: $abyss;
+}
+
+.colorsky {
+    background-color: $sky;
+    color: $white;
+}
+
+// this adds emphasis on which tile color the user is currently on.
+.colorbox:hover {
+    transform: scale(1.1);
+}
+
+// this allows for the tiles to be inline and move depending on the browser page
+
+.brand-colors {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px -20px;
+}
