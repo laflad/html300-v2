@@ -1,13 +1,28 @@
 // Import partials here:
 @import '_settings.variables.scss';
 
-// below is the general page formatting
-* {
-    font-family: sans-serif;
+//Mixins here:
+
+@mixin main-font {
+    font-family: Arial, sans-serif;
 }
 
-h1 {
-    color: $abyss;
+@mixin dark-brand {
+    background-color: $abyss;
+    color: $white
+}
+
+@mixin light-brand {
+    background-color: $lagoon;
+    color: $white;
+}
+
+// below is the general page formatting
+
+// applying mixin to the full site here. I'll get more creative with a variety in the coming lessons.
+
+* {
+    @include main-font;
 }
 
 .logo-main {
@@ -17,7 +32,7 @@ h1 {
     right: 120px;
 }
 
-
+// this was a bit tricky since in the logo the word is ontop of the hammer but I figured out how to hover over one image to affect another
 
 body {
     background-color: $white;
@@ -40,7 +55,7 @@ body {
 
 .topnav {
     overflow: hidden;
-    background-color: $arcadia;
+    @include dark-brand;
     border-radius: 4px;
     a {
         float: left;
@@ -53,11 +68,10 @@ body {
     }
     a:hover {
         background-color: $mist;
-        color: $black;
+        color: $abyss;
     }
     a.active {
-        background-color: $lagoon;
-        color: $white;
+        @include light-brand;
         font-weight: bold;
     }
 }
@@ -76,8 +90,7 @@ body {
 // below are the call branded background colors and the font colors they should be accompanied by
 
 .colorlagoon {
-    background-color: $lagoon;
-    color: $white;
+    @include light-brand;
 }
 
 .colormist {
@@ -86,8 +99,7 @@ body {
 }
 
 .colorabyss {
-    background-color: $abyss;
-    color: $white;
+    @include dark-brand;
 }
 
 .colorarcadia {
@@ -102,7 +114,7 @@ body {
 
 .colorsky {
     background-color: $sky;
-    color: $white;
+    color: $white; 
 }
 
 // this adds emphasis on which tile color the user is currently on.
