@@ -5,7 +5,7 @@
 @import 'components.content';
 
 // import bootstrap
-@import "../node_modules/bootstrap/scss/bootstrap";
+// @import "../node_modules/bootstrap/scss/bootstrap";
 
 // changed the primary color to teal
 .btn-primary {
@@ -29,13 +29,4 @@
     overflow: hidden;
     margin-top: 3rem;
     margin-bottom: 4rem;
-
-}
-
-body {
-    background-color: black;
-}
-
-html {
-    display: none;
 }

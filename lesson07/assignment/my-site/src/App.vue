@@ -8,6 +8,23 @@
       <router-link class="nav-item" to="/images">Images</router-link>
       <router-link class="nav-item" to="/accordion">Accordion</router-link>
       <router-link class="nav-item" to="/grid">Grid</router-link>
+
+      <ul class="list-inline">
+            <li class="list-inline-item">
+              <router-link class="nav-item" to="/">Home</router-link>
+
+            </li>
+            <li class="list-inline-item">
+                <a href="images.html" class="btn btn-light">Images</a>
+            </li>
+            <li class="list-inline-item">
+                <a href="accordion.html" class="btn btn-light">Accordion</a>
+            </li>
+            <li class="list-inline-item">
+                <a href="grid.html" class="btn btn-light">Grid System</a>
+            </li>
+        </ul>
+
     </nav>
     <router-view></router-view>
     <footer>
@@ -39,5 +56,11 @@ export default {
 .nav-item {
   padding: 0 1rem;
 }
+
+.router-link-exact-active {
+  outline: 1px solid red;
+
+}
+
 
 </style> 

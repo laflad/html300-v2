@@ -13,6 +13,7 @@ import AccordionPage from './components/pages/AccordionPage'
 import GridPage from './components/pages/GridPage'
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
+import './scss/style.scss'
 
 
 // Add the Router plugin
