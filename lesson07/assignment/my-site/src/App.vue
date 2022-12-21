@@ -9,27 +9,13 @@
       <router-link class="nav-item" to="/accordion">Accordion</router-link>
       <router-link class="nav-item" to="/grid">Grid</router-link>
 
-      <ul class="list-inline">
-            <li class="list-inline-item">
-              <router-link class="nav-item" to="/">Home</router-link>
-
-            </li>
-            <li class="list-inline-item">
-                <a href="images.html" class="btn btn-light">Images</a>
-            </li>
-            <li class="list-inline-item">
-                <a href="accordion.html" class="btn btn-light">Accordion</a>
-            </li>
-            <li class="list-inline-item">
-                <a href="grid.html" class="btn btn-light">Grid System</a>
-            </li>
-        </ul>
-
     </nav>
     <router-view></router-view>
-    <footer>
+        <!-- sticky footer -->
+        <footer class="footer bg-light text-center pt-3 pb-1">
+            <p class="lead">Thanks for checking out my page!</p>
+        </footer>
 
-    </footer>
   </div>
 </template>
 
@@ -58,9 +44,10 @@ export default {
 }
 
 .router-link-exact-active {
-  outline: 1px solid red;
-
+  background-color: teal;
+  color: white;
+  padding: .5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
 }
-
-
 </style> 
