@@ -3,8 +3,7 @@
 
         <!-- main text with simple padding -->
         <main class="main pt-3 text-center">
-        <h2>In this assignment, I'm exploring how to use Bootstrap</h2>
-        <p class="lead">For the frist page, I'd like to explore a very simple form!</p>
+        <p class="lead">For the frist page, I'd like to explore popover, toggles, and a carousel!</p>
 
         <!-- just simple content to put on the home page. Using a mini form. -->
 
@@ -23,7 +22,6 @@
         <!-- using a poppover here with the script at the bottom -->
 
         <div class="text-center mt-5">
-            <p class="lead">Check this out!</p>
             <button type="button" class="btn btn-primary p-5" data-container="body" data-toggle="popover"
                 data-trigger="focus" data-placement="top"
                 data-content="Seven! He sits, shakes, hugs, kisses, dances, plays dead, and jumps through a hoop!">How many
@@ -32,10 +30,12 @@
 
         <!-- using the v-if and v-else conditions -->
 
-        <h1 v-if="best">Which pet is the best?</h1>
-        <h1 v-else>Cats, of course!</h1>
-        <button @click="best = !best">Find out!</button>
+        <div>
 
+        <h1 v-if="awesome">Which pet is the best?</h1>
+        <h1 v-else>Cats! duh!</h1>
+        <button @click="awesome = !awesome">Find out!</button>
+        </div>
 
 
         <h2>trying popper below this</h2>
