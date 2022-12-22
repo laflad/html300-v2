@@ -1,72 +1,38 @@
 <template>
     <div>
-
         <!-- main text with simple padding -->
-        <main class="main pt-3 text-center">
-        <p class="lead">For the frist page, I'd like to explore popover, toggles, and a carousel!</p>
-
-        <!-- just simple content to put on the home page. Using a mini form. -->
-
-        <!-- <form>
-            <div class="form-group text-center">
-                <label for="name">If you have a pet...</label>
-                <div class="text-center">
-                    <input class="form-control text-center mx-auto m-2" style="width:300px" type="text" id="name"
-                        placeholder="Enter your pet's name"></div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <div class="answer"></div>
-
-            </div>
-        </form> -->
-
-        <!-- using a poppover here with the script at the bottom -->
-
-        <div class="text-center mt-5">
-            <button type="button" class="btn btn-primary p-5" data-container="body" data-toggle="popover"
-                data-trigger="focus" data-placement="top"
-                data-content="Seven! He sits, shakes, hugs, kisses, dances, plays dead, and jumps through a hoop!">How many
-                tricks do you think Winston knows?<br>Click here to find out!</button>
-        </div>
-
-        <!-- using the v-if and v-else conditions -->
-
-        <div>
-
-        <h1 v-if="awesome">Which pet is the best?</h1>
-        <h1 v-else>Cats! duh!</h1>
-        <button @click="awesome = !awesome">Find out!</button>
-        </div>
-
-
-        <h2>trying popper below this</h2>
+        <!-- Don't mind my lack of styling. This page is strictly for testing vue and boodstrap. :) -->
         
-        <!-- <popper
-            trigger="clickToOpen"
-            :options="{
-                placement: 'top',
-                modifiers: { offset: {offset: '0,10px' }}
-            }">
-            <div class="popper">
-                Stuff here
+        <main class="main pt-3 text-center">
+            <p class="lead">Exploring Vue and Bootstrap.</p>
+
+            <p>What is your favoirte part about Vue?<br> {{ message }}</p>
+            <input v-model="message" placeholder="edit me" />
+            <br><br>
+
+            <!-- using a poppover with hover -->
+
+            <div class="pop-hover">
+                <b-button v-b-popover.hover.top="'I am popover directive content!'" title="Seven! He sits, shakes, hugs, kisses, dances, plays dead, and jumps through a hoop!">
+                    How many tricks do you think Winston knows? <br>
+                    Hover over me to find out!
+                </b-button>
             </div>
-            <button slot="reference">
-                refrence here
-            </button>
-        </popper> -->
 
-        <!-- different approach here. Also not working. -->
+            <!-- using the v-if and v-else conditions -->
 
-        <!-- <div id="app">
-            <button id="button" aria-describedby="tooltip">New Button</button>
-            <div id="tooltip" role="tooltip">Woah!</div>
-        </div> -->
-        <h2>trying popper above this</h2>
+            <div id="app">
+                <h1 v-if="!isHidden">Cats! Duh!</h1>
+                <h1 v-else>Which pet is the best to have?</h1>
+                <button v-on:click="isHidden = !isHidden">Click me to find out!</button>
+            </div>
+ 
+        </main>
 
         <!-- I made carousel narrow so that it wouldn't take up too much space. -->
- 
-    </main>
+        <!-- I put the carousel outside of main so that it doesn't get the same style treatement. -->
 
-    <div id="carouselExampleIndicators" class="carousel slide my-slider" data-bs-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide my-slider" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -97,41 +63,25 @@
 </template>
 
 <script>
-// import Popper from '@popperjs/core';
-// import Alert from '../../scripts/alert.js'
-
-// import { createPopper } from '@popperjs/core';
-
-// const popcorn = document.querySelector('#popcorn');
-// const tooltip = document.querySelector('#tooltip');
-
-// createPopper(popcorn, tooltip, {
-//     placement: 'top',
-// });
-
 export default {
     name: "HomePage",
     props: {
         msg: String
     },
-    // components: { 
-    //     'alert': Alert,
-    //     'popper': Popper
-    // },
-    // data() {
-    //     const button = document.querySelector('#button');
-    //     const tooltip = document.querySelector('#tooltip');
-
-    //     Popper.createPopper(button, tooltip);
-
-    //     return {
-    //     };
-    // }
+    data () {
+        return {
+            isHidden: true,
+            message: '',
+        }
+    }
 }
-
 </script>
 
 <style>
-
+.pop-hover {
+    background-color: lightcyan;
+    padding: 1rem;
+    font-weight: bold;
+}
 
 </style>

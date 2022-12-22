@@ -1,26 +1,27 @@
 <template>
   <div id="app">
+  
     <header class="text-center">
-        <h1 class="display-1">Bootstrap All Day</h1>
+      <h1 class="display-1 m-2">Bootstrap All Day</h1>
     </header>
+
     <nav>
       <router-link class="nav-item" to="/">Home</router-link>
       <router-link class="nav-item" to="/images">Images</router-link>
       <router-link class="nav-item" to="/accordion">Accordion</router-link>
       <router-link class="nav-item" to="/grid">Grid</router-link>
-
     </nav>
+
     <router-view></router-view>
-        <!-- sticky footer -->
-        <footer class="footer bg-light text-center pt-3 pb-1">
-            <p class="lead">Thanks for checking out my page!</p>
-        </footer>
+      <!-- sticky footer -->
+    <footer class="footer bg-light text-center pt-3 pb-1">
+        <p class="lead">Thanks for checking out my page!</p>
+    </footer>
 
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'App',
   // components: {
