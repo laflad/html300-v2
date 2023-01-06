@@ -1,0 +1,32 @@
+// Import partials here
+@import 'base.normalize';
+@import 'settings.variables';
+@import 'settings.responsive';
+@import 'components.content';
+
+// import bootstrap
+// @import "../node_modules/bootstrap/scss/bootstrap";
+
+// changed the primary color to teal
+.btn-primary {
+    background-color: #068f88 !important;
+    border-color: #29c2ba !important;
+}
+
+// sticky footer
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 99 !important;
+}
+
+// making the carousel thin so it doesn't take to much vertical space
+.my-slider img {
+    object-fit: cover;
+    object-position: center;
+    height: 300px !important;
+    overflow: hidden;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+}
